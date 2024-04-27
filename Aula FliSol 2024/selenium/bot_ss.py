@@ -24,8 +24,12 @@ search_box.send_keys(Keys.RETURN)
 time.sleep(5)
 
 # Encontrando e imprimindo o valor do dólar
-dolar_element = navegador.find_element(By.XPATH, '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]')
-extenso_value = navegador.find_element(By.XPATH, '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[2]')
+path_dolar = '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]'
+path_value = '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[2]'
+
+# Extraindo os dados
+dolar_element = navegador.find_element(By.XPATH, path_dolar)
+extenso_value = navegador.find_element(By.XPATH, path_value)
 print("Valor do dólar hoje:", 'R$' + dolar_element.text + ' ' + extenso_value.text)
 time.sleep(4)
 
